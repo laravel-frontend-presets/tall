@@ -1,10 +1,10 @@
 <?php
 
-namespace DanHarrin\TALL;
+namespace DanHarrin\Tall;
 
 use Illuminate\Support\ServiceProvider;
 
-class TALLServiceProvider extends ServiceProvider
+class TallServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.

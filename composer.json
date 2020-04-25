@@ -29,18 +29,18 @@
     },
     "autoload": {
         "psr-4": {
-            "DanHarrin\\TALL\\": "src/"
+            "DanHarrin\\Tall\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DanHarrin\\TALL\\Tests\\": "tests/"
+            "DanHarrin\\Tall\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "DanHarrin\\TALL\\TALLServiceProvider"
+                "DanHarrin\\Tall\\TallServiceProvider"
             ]
         }
     },
