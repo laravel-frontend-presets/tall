@@ -1,0 +1,49 @@
+{
+    "name": "danharrin/tall",
+    "description": "TALL preset for Laravel.",
+    "keywords": [
+        "tall",
+        "laravel",
+        "preset"
+    ],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/danharrin/tall/issues",
+        "source": "https://github.com/danharrin/tall"
+    },
+    "authors": [
+        {
+            "name": "Dan Harrin",
+            "email": "danharrin@icloud.com"
+        },
+        {
+            "name": "Liam Hammett",
+            "email": "liam@liamhammett.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DanHarrin\\TALL\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DanHarrin\\TALL\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DanHarrin\\TALL\\TALLServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
