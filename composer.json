@@ -3,13 +3,19 @@
     "description": "TALL preset for Laravel.",
     "keywords": [
         "tall",
+        "preset",
+        "tailwind",
+        "tailwindcss",
+        "tailwindui",
+        "alpine",
+        "alpinejs",
         "laravel",
-        "preset"
+        "livewire"
     ],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/danharrin/tall/issues",
-        "source": "https://github.com/danharrin/tall"
+        "issues": "https://github.com/laravel-frontend-presets/tall/issues",
+        "source": "https://github.com/laravel-frontend-presets/tall"
     },
     "authors": [
         {
