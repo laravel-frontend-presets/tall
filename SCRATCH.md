@@ -1,9 +1,0 @@
-- Write readme with installation instructions
-- Finish the email verification component
-- Finish the password reset component
-- Write tests for components
-- Move components to package
-- Make the `confirmPassword` rule camel case in the registration component
-- Confirm if we can move the repo to the laravel-frontend-presets organisation
-- Confirm if we can use the TailwindUI styles with Adam
-- Write GitHub Actions to confirm the tests work in a real application
