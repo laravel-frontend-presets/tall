@@ -5,7 +5,6 @@ namespace LaravelFrontendPresets\Tall;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiCommand;
-use Laravel\Ui\AuthCommand;
 
 class TallServiceProvider extends ServiceProvider
 {
