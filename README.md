@@ -31,11 +31,11 @@ npm run dev
 
 ## Installation (with auth)
 
-If you want authentication in your application, make sure to use the `tall-auth` preset instead, to get all the relevant routes, controllers, components and views:
+If you want authentication in your application, make sure to use the `--auth` flag on the preset command to get all the relevant routes, controllers, components and views:
 
 ```bash
 composer require laravel-frontend-presets/tall
-php artisan preset tall-auth
+php artisan preset tall --auth
 npm install
 npm run dev
 ```
