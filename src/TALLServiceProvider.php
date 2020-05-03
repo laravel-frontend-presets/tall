@@ -1,6 +1,6 @@
 <?php
 
-namespace DanHarrin\Tall;
+namespace LaravelFrontendPresets\Tall;
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;

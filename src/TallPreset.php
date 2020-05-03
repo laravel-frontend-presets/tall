@@ -1,6 +1,6 @@
 <?php
 
-namespace DanHarrin\Tall;
+namespace LaravelFrontendPresets\Tall;
 
 use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;

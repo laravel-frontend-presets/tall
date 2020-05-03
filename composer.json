@@ -1,5 +1,5 @@
 {
-    "name": "danharrin/tall",
+    "name": "laravel-frontend-presets/tall",
     "description": "TALL preset for Laravel.",
     "keywords": [
         "tall",
@@ -33,18 +33,18 @@
     },
     "autoload": {
         "psr-4": {
-            "DanHarrin\\Tall\\": "src/"
+            "LaravelFrontendPresets\\Tall\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DanHarrin\\Tall\\Tests\\": "tests/"
+            "LaravelFrontendPresets\\Tall\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "DanHarrin\\Tall\\TallServiceProvider"
+                "LaravelFrontendPresets\\Tall\\TallServiceProvider"
             ]
         }
     },
