@@ -52,7 +52,7 @@ All routes, components, controllers and tests are published to your application.
 
 ## Removing the package
 
-If you don't want to keep this package installed once you've installed the preset, you can safely remove it with a couple of extra steps. Unlike the default Laravel presets, this one publishes all the auth logic to your own `app/` directory, so you there are is no logic being depended upon within the package itself.
+If you don't want to keep this package installed once you've installed the preset, you can safely remove it with a couple of extra steps. Unlike the default Laravel presets, this one publishes all the auth logic to your own `app/` directory, so there is no logic being depended upon within the package itself.
 
 Firstly, make sure add Livewire as a dependency into your own project:
 
