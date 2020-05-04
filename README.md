@@ -50,6 +50,39 @@ All routes, components, controllers and tests are published to your application.
 
 ![Login View](./screenshot.png)
 
+## Removing the package
+
+If you don't want to keep this package installed once you've installed the preset, you can safely remove it with a couple of extra steps. Unlike the default Laravel presets, this one publishes all the auth logic to your own `app/` directory, so you there are is no logic being depended upon within the package itself.
+
+Firstly, make sure add Livewire as a dependency into your own project:
+
+```bash
+composer require livewire/livewire
+```
+
+If you are using pagination, set the default pagination views to the ones provided in the `boot` method of a service provider:
+
+```php
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        Paginator::defaultView('pagination::default');
+
+        Paginator::defaultSimpleView('pagination::simple-default');
+    }
+}
+```
+
+That's it, you should now be able to remove the package:
+
+```bash
+composer remove laravel-frontend-presets/tall
+```
+
 ## Credits
 
 - [Dan Harrin](https://github.com/danharrin)
