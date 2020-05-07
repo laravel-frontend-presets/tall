@@ -29,7 +29,7 @@ class RegisterTest extends TestCase
         auth()->login($user);
 
         $this->get(route('register'))
-            ->assertRedirect(RouteServiceProvider::HOME);
+            ->assertRedirect(route('home'));
     }
 
     /** @test */
@@ -41,7 +41,7 @@ class RegisterTest extends TestCase
             ->set('password', 'password')
             ->set('passwordConfirmation', 'password')
             ->call('register')
-            ->assertRedirect(RouteServiceProvider::HOME);
+            ->assertRedirect(route('home'));
 
         $this->assertTrue(User::whereEmail('tallstack@example.com')->exists());
         $this->assertEquals('tallstack@example.com', auth()->user()->email);

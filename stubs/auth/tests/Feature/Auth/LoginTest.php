@@ -29,7 +29,7 @@ class LoginTest extends TestCase
         auth()->login($user);
 
         $this->get(route('login'))
-            ->assertRedirect(RouteServiceProvider::HOME);
+            ->assertRedirect(route('home'));
     }
 
     /** @test */

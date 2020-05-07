@@ -13,6 +13,6 @@ class LogoutController extends Controller
     {
         Auth::logout();
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(route('home'));
     }
 }

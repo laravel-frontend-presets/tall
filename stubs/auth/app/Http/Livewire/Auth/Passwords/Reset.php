@@ -57,7 +57,7 @@ class Reset extends Component
         );
 
         if ($response == Password::PASSWORD_RESET) {
-            return redirect(RouteServiceProvider::HOME)
+            return redirect(route('home'))
                 ->with('flash', trans($response));
         }
 
