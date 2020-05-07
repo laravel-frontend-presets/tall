@@ -23,10 +23,10 @@ class TallServiceProvider extends ServiceProvider
             if ($command->option('auth')) {
                 TallPreset::installAuth();
 
-                $command->info('TALL auth scaffolding installed successfully.');
+                $command->info('Auth scaffolding installed successfully.');
             }
 
-            $command->comment('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
+            $command->comment('Please run "npm install && npm run dev" to compile your new assets.');
         });
 
         Paginator::defaultView('pagination::default');
