@@ -9,8 +9,8 @@ jobs:
       fail-fast: false
       matrix:
         php-versions: ['7.2', '7.3', '7.4']
-        laravel-versions: ['^6.0', '^7.0']
-    name: Test on PHP ${{ matrix.php-versions }}, Laravel ${{ matrix.laravel-versions }} and ${{ matrix.composer-flags }}
+        laravel-versions: ['^7.0']
+    name: Test on PHP ${{ matrix.php-versions }}, Laravel ${{ matrix.laravel-versions }}
     steps:
     - name: Checkout
       uses: actions/checkout@master
