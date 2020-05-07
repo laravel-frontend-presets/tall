@@ -33,7 +33,7 @@ npm run dev
 If you would like to install the preset and its auth scaffolding in a fresh Laravel application, make sure to use the `--auth` flag on the `ui` command:
 
 ```bash
-composer require laravel/ui laravel-frontend-presets/tall
+composer require laravel/ui livewire/livewire laravel-frontend-presets/tall
 php artisan ui tall --auth
 npm install
 npm run dev
