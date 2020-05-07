@@ -33,6 +33,8 @@ class TallPreset extends Preset
         $filesystem->deleteDirectory(resource_path('sass'));
 
         $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
+
+        static::updateDefaultHomeRoute();
     }
 
     public static function installAuth()
@@ -48,5 +50,12 @@ class TallPreset extends Preset
             static::NPM_PACKAGES_TO_ADD,
             Arr::except($packages, static::NPM_PACKAGES_TO_REMOVE)
         );
+    }
+
+    protected static function updateDefaultHomeRoute()
+    {
+        $originalProvider = file_get_contents(app_path('Providers/RouteServiceProvider.php'));
+        $newProvider = str_replace("public const HOME = '/home';", "public const HOME = '/';", $originalProvider);
+        file_put_contents(app_path('Providers/RouteServiceProvider.php'), $newProvider);
     }
 }
