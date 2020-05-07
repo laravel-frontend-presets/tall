@@ -2,15 +2,15 @@
     "name": "laravel-frontend-presets/tall",
     "description": "TALL preset for Laravel.",
     "keywords": [
-        "tall",
-        "preset",
+        "alpine",
+        "alpinejs",
         "tailwind",
         "tailwindcss",
         "tailwindui",
-        "alpine",
-        "alpinejs",
+        "tall",
         "laravel",
-        "livewire"
+        "livewire",
+        "preset"
     ],
     "license": "MIT",
     "support": {
@@ -20,7 +20,7 @@
     "authors": [
         {
             "name": "Dan Harrin",
-            "email": "danharrin@icloud.com"
+            "email": "Dan@DanHarrin.com"
         },
         {
             "name": "Liam Hammett",
@@ -33,8 +33,7 @@
     ],
     "require": {
         "php": "^7.2.5",
-        "laravel/ui": "^2.0",
-        "livewire/livewire": "^1.0"
+        "laravel/ui": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0"
