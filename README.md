@@ -2,13 +2,15 @@
 
 [![Total Downloads](https://poser.pugx.org/laravel-frontend-presets/tall/d/total.svg)](https://packagist.org/packages/laravel-frontend-presets/tall)
 
-A front-end preset for Laravel to scaffold an application using the TALL stack, jumpstarting your application's development.
+A front-end preset for Laravel to scaffold an application using the [TALL stack](https://tallstack.dev), jumpstarting your application's development.
 
 If you're not familiar with the name, it's an acronym that describes the main technologies involved in the stack:
 - [TailwindCSS](https://tailwindcss.com)
 - [Alpine.js](https://github.com/alpinejs/alpine)
 - [Laravel](https://laravel.com)
 - [Livewire](https://laravel-livewire.com)
+
+![Login View](./screenshot.png)
 
 Some notable features of this package include:
 - Views extending a default layout
@@ -43,8 +45,6 @@ Some notable features of the authentication scaffolding include:
 - Bundled with pre-written tests
 
 All routes, components, controllers and tests are published to your application. The idea behind this is that you have full control over every aspect of the scaffolding in your own app, removing the need to dig around in the vendor folder to figure out how things are working.
-
-![Login View](./screenshot.png)
 
 ## Removing the package
 
