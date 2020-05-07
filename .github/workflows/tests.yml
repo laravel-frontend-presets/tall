@@ -26,9 +26,9 @@ jobs:
         cd app
         composer require laravel/ui
         composer require livewire/livewire
-        composer config repositories.tall.type "path" --file composer.json
-        composer config repositories.tall.url "../" --file composer.json
-        composer config repositories.tall.options.symlink true --file composer.json
+        composer config repositories.tall.type "path"
+        composer config repositories.tall.url "../"
+        composer config repositories.tall.options.symlink true
         composer require laravel-frontend-presets/tall @dev
         php artisan ui tall
     - name: Run PHPUnit
