@@ -35,11 +35,11 @@ class LoginTest extends TestCase
     /** @test */
     public function a_user_can_login()
     {
-        $user = factory(User::class)->create(['password' => Hash::make('secret')]);
+        $user = factory(User::class)->create(['password' => Hash::make('password')]);
 
         Livewire::test('auth.login')
             ->set('email', $user->email)
-            ->set('password', 'secret')
+            ->set('password', 'password')
             ->call('authenticate');
 
         $this->assertTrue(
@@ -50,11 +50,11 @@ class LoginTest extends TestCase
     /** @test */
     public function is_redirected_to_the_home_page_after_login()
     {
-        $user = factory(User::class)->create(['password' => Hash::make('secret')]);
+        $user = factory(User::class)->create(['password' => Hash::make('password')]);
 
         Livewire::test('auth.login')
             ->set('email', $user->email)
-            ->set('password', 'secret')
+            ->set('password', 'password')
             ->call('authenticate')
             ->assertRedirect(route('home'));
     }
@@ -62,10 +62,10 @@ class LoginTest extends TestCase
     /** @test */
     public function email_is_required()
     {
-        $user = factory(User::class)->create(['password' => Hash::make('secret')]);
+        $user = factory(User::class)->create(['password' => Hash::make('password')]);
 
         Livewire::test('auth.login')
-            ->set('password', 'secret')
+            ->set('password', 'password')
             ->call('authenticate')
             ->assertHasErrors(['email' => 'required']);
     }
@@ -73,11 +73,11 @@ class LoginTest extends TestCase
     /** @test */
     public function email_must_be_valid_email()
     {
-        $user = factory(User::class)->create(['password' => Hash::make('secret')]);
+        $user = factory(User::class)->create(['password' => Hash::make('password')]);
 
         Livewire::test('auth.login')
             ->set('email', 'invalid-email')
-            ->set('password', 'secret')
+            ->set('password', 'password')
             ->call('authenticate')
             ->assertHasErrors(['email' => 'email']);
     }
@@ -85,7 +85,7 @@ class LoginTest extends TestCase
     /** @test */
     public function password_is_required()
     {
-        $user = factory(User::class)->create(['password' => Hash::make('secret')]);
+        $user = factory(User::class)->create(['password' => Hash::make('password')]);
 
         Livewire::test('auth.login')
             ->set('email', $user->email)

@@ -38,8 +38,8 @@ class RegisterTest extends TestCase
         Livewire::test('auth.register')
             ->set('name', 'Tall Stack')
             ->set('email', 'tallstack@example.com')
-            ->set('password', 'secret')
-            ->set('passwordConfirmation', 'secret')
+            ->set('password', 'password')
+            ->set('passwordConfirmation', 'password')
             ->call('register')
             ->assertRedirect(RouteServiceProvider::HOME);
 
@@ -69,7 +69,7 @@ class RegisterTest extends TestCase
     function email_is_valid_email()
     {
         Livewire::test('auth.register')
-            ->set('email', 'calebporzio')
+            ->set('email', 'tallstack')
             ->call('register')
             ->assertHasErrors(['email' => 'email']);
     }
@@ -103,16 +103,16 @@ class RegisterTest extends TestCase
     {
         Livewire::test('auth.register')
             ->set('password', '')
-            ->set('passwordConfirmation', 'secret')
+            ->set('passwordConfirmation', 'password')
             ->call('register')
             ->assertHasErrors(['password' => 'required']);
     }
 
     /** @test */
-    function password_is_minimum_of_six_characters()
+    function password_is_minimum_of_eight_characters()
     {
         Livewire::test('auth.register')
-            ->set('password', 'secre')
+            ->set('password', 'secret')
             ->set('passwordConfirmation', 'secret')
             ->call('register')
             ->assertHasErrors(['password' => 'min']);
@@ -123,8 +123,8 @@ class RegisterTest extends TestCase
     {
         Livewire::test('auth.register')
             ->set('email', 'tallstack@example.com')
-            ->set('password', 'secret')
-            ->set('passwordConfirmation', 'not-secret')
+            ->set('password', 'password')
+            ->set('passwordConfirmation', 'not-password')
             ->call('register')
             ->assertHasErrors(['password' => 'same']);
     }
