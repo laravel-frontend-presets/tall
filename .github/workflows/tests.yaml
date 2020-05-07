@@ -25,7 +25,7 @@ jobs:
       run: |
         cd app
         composer require livewire/livewire
-        composer config repositories.local '{"type": "path", "url": "../", "options": {"symlink": true}}' --file composer.json
+        composer config repositories.local '{"type": "path", "url": "../"}' --file composer.json
         composer require laravel-frontend-presets/tall dev-master
         php artisan ui tall --auth
     - name: Run PHPUnit
