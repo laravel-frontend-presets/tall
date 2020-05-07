@@ -1,6 +1,6 @@
 # Laravel TALL Preset
 
-[![CI Status](https://github.com/laravel-frontend-presets/tall/workflows/CI/badge.svg)](https://github.com/laravel-frontend-presets/tall/actions)
+[![CI Status](https://github.com/laravel-frontend-presets/tall/workflows/Run%20Tests/badge.svg)](https://github.com/laravel-frontend-presets/tall/actions)
 [![Total Downloads](https://packagist.org/packages/laravel-frontend-presets/tall)](https://poser.pugx.org/laravel-frontend-presets/tall/d/total.svg)
 
 A front-end preset for Laravel to scaffold an application using the TALL stack, jumpstarting your application's development.
