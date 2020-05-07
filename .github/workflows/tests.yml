@@ -1,0 +1,35 @@
+name: Run Tests
+on: [push]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 15
+      fail-fast: false
+      matrix:
+        php-versions: ['7.2', '7.3', '7.4']
+        laravel-versions: ['^6.0', '^7.0']
+    name: Test on PHP ${{ matrix.php-versions }}, Laravel ${{ matrix.laravel-versions }} and ${{ matrix.composer-flags }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Install PHP
+      uses: shivammathur/setup-php@master
+      with:
+        php-version: ${{ matrix.php-versions }}
+    - name: Create Laravel app
+      run: \
+        composer create-project laravel/laravel=${{ matrix.laravel-versions }} app --prefer-dist
+    - name: Install Packages
+      run: \
+        cd app
+        composer require laravel/ui
+        composer require livewire/livewire
+        'composer config repositories.local \'{"type": "path", "url": "\'../\'", "options": {"symlink": true}}\' --file composer.json'
+        composer require laravel-frontend-presets/tall @dev
+        php artisan ui tall
+    - name: Run PHPUnit
+      run: \
+        cd app
+        php vendor/bin/phpunit
