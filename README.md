@@ -52,7 +52,7 @@ All routes, components, controllers and tests are published to your application.
 If you don't want to keep this package installed once you've installed the preset, you can safely remove it. Unlike the default Laravel presets, this one publishes all the auth logic to your project's `/app` directory, so it's fully redundant.
 
 
-### A note on pagination
+## A note on pagination
 
 If you are using pagination, you set the default pagination views to the ones provided in the `boot` method of a service provider:
 
@@ -69,6 +69,19 @@ class AppServiceProvider extends ServiceProvider
         Paginator::defaultSimpleView('pagination::simple-default');
     }
 }
+```
+
+## A note on production CSS purging
+
+By default, Tailwind will run PurgeCSS looking within your `resources/views` and `resources/css` directories for classes to keep. You can change (or entirely disable) this behavior by changing the `purge` section of your `tailwind.config.js` file. For more information about Tailwind's implementation of PurgeCSS, you can [read here](https://tailwindcss.com/docs/controlling-file-size/).
+
+For example, if your JavaScript files contain CSS classes, you will need to add the following to the `content` section so those classes don't get purged:
+
+```js
+content: [
+    ...
+    './resources/js/**/*.js',
+],
 ```
 
 ## Credits

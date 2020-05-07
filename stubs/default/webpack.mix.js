@@ -1,7 +1,6 @@
 const mix = require("laravel-mix");
 
 require("laravel-mix-tailwind");
-require("laravel-mix-purgecss");
 
 /*
  |--------------------------------------------------------------------------
@@ -20,8 +19,5 @@ mix.js("resources/js/app.js", "public/js/app.js")
     .sourceMaps();
 
 if (mix.inProduction()) {
-    mix.version()
-        .purgeCss({
-            extractorPattern: /[\w-/.:]+(?<!:)/g
-        });
+    mix.version();
 }

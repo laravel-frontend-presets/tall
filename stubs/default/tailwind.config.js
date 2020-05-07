@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     theme: {
@@ -9,8 +9,17 @@ module.exports = {
         },
     },
     variants: {},
+    purge: {
+        content: [
+            './resources/views/**/*.blade.php',
+            './resources/css/**/*.css',
+        ],
+        options: {
+            extractorPattern: /[\w-/.:]+(?<!:)/g,
+        },
+    },
     plugins: [
         require('@tailwindcss/custom-forms'),
         require('@tailwindcss/ui'),
-    ]
-}
+    ],
+};
