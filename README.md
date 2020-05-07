@@ -41,7 +41,7 @@ npm run dev
 
 Some notable features of the authentication scaffolding include:
 - Powered by Livewire components and single action controllers
-- Bundled with prewritten tests
+- Bundled with pre-written tests
 
 All routes, components, controllers and tests are published to your application. The idea behind this is that you have full control over every aspect of the scaffolding in your own app, removing the need to dig around in the vendor folder to figure out how things are working.
 
