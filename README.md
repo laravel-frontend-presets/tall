@@ -3,62 +3,53 @@
 [![CI Status](https://github.com/laravel-frontend-presets/tall/workflows/CI/badge.svg)](https://github.com/laravel-frontend-presets/tall/actions)
 [![Total Downloads](https://packagist.org/packages/laravel-frontend-presets/tall)](https://poser.pugx.org/laravel-frontend-presets/tall/d/total.svg)
 
-A front-end preset for Laravel to scaffold an application using the TALL stack, to help you get developing your application quickly.
+A front-end preset for Laravel to scaffold an application using the TALL stack, jumpstarting your application's development.
 
 If you're not familiar with the name, it's an acronym that describes the main technologies involved in the stack:
-
-- [TailwindCSS](https://tailwindcss.com/)
+- [TailwindCSS](https://tailwindcss.com)
 - [Alpine.js](https://github.com/alpinejs/alpine)
-- [Laravel](https://laravel.com/)
-- [Livewire](https://laravel-livewire.com/)
+- [Laravel](https://laravel.com)
+- [Livewire](https://laravel-livewire.com)
 
-Here are some notable features:
-
-- Views extend a default layout
-- Front-end assets like TailwindCSS and AlpineJS are set up with Laravel Mix
-- [Tailwind UI](https://tailwindui.com/) and Tailwind's [Custom Forms](https://github.com/tailwindcss/custom-forms) extensions are available out-of-the-box
+Some notable features of this package include:
+- Views extending a default layout
+- Front-end assets like TailwindCSS and AlpineJS compiled with Laravel Mix
+- Tailwind-powered pagination views
+- The [Tailwind UI](https://tailwindui.com) and Tailwind's [Custom Forms](https://github.com/tailwindcss/custom-forms) extensions available out-of-the-box
 
 ## Installation (without auth)
 
-To install the preset in a fresh Laravel application, make sure to run the following commands:
+To install the preset in a fresh Laravel application, simply run the following commands:
 
 ```bash
-composer require laravel-frontend/presets/tall
-php artisan preset tall
+composer require laravel/ui livewire/livewire laravel-frontend-presets/tall
+php artisan ui tall
 npm install
 npm run dev
 ```
 
 ## Installation (with auth)
 
-If you want authentication in your application, make sure to use the `--auth` flag on the preset command to get all the relevant routes, controllers, components and views:
+If you would like to install the preset and its auth scaffolding in a fresh Laravel application, make sure to use the `--auth` flag on the `ui` command:
 
 ```bash
-composer require laravel-frontend-presets/tall
-php artisan preset tall --auth
+composer require laravel/ui laravel-frontend-presets/tall
+php artisan ui tall --auth
 npm install
 npm run dev
 ```
 
-There are some notable things about the authentication scaffolding, too:
+Some notable features of the authentication scaffolding include:
+- Powered by Livewire components and single action controllers
+- Bundled with prewritten tests
 
-- Most of the auth scaffolding comes as Livewire components
-- The parts that can't be components are set up as single-action controllers
-- The auth components come with full tests
-
-All routes, components, controllers and tests are published to your application. The idea behind this is that you can then take full control over every aspect of the scaffolding in your own app and not need to dig around in the vendor folder to figure out how things are working.
+All routes, components, controllers and tests are published to your application. The idea behind this is that you have full control over every aspect of the scaffolding in your own app, removing the need to dig around in the vendor folder to figure out how things are working.
 
 ![Login View](./screenshot.png)
 
 ## Removing the package
 
-If you don't want to keep this package installed once you've installed the preset, you can safely remove it with a couple of extra steps. Unlike the default Laravel presets, this one publishes all the auth logic to your own `app/` directory, so there is no logic being depended upon within the package itself.
-
-Firstly, make sure add Livewire as a dependency into your own project:
-
-```bash
-composer require livewire/livewire
-```
+If you don't want to keep this package installed once you've installed the preset, you can safely remove it with a couple of extra steps. Unlike the default Laravel presets, this one publishes all the auth logic to your project's `/app` directory, so it's fully redundant.
 
 If you are using pagination, set the default pagination views to the ones provided in the `boot` method of a service provider:
 
@@ -85,8 +76,8 @@ composer remove laravel-frontend-presets/tall
 
 ## Credits
 
-- [Dan Harrin](https://github.com/danharrin)
+- [Dan Harrin](https://github.com/DanHarrin)
 - [Liam Hammett](https://github.com/imliam)
 - [Ryan Chandler](https://github.com/ryangjchandler)
-- [TailwindUI](https://tailwindui.com/) for the default authentication and pagination views
+- [Tailwind UI](https://tailwindui.com) for the default authentication and pagination views
 - [All Contributors](../../contributors)
