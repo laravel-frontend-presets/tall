@@ -8,6 +8,7 @@ use Livewire\Livewire;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterTest extends TestCase
 {
@@ -26,7 +27,7 @@ class RegisterTest extends TestCase
     {
         $user = factory(User::class)->create();
 
-        auth()->login($user);
+        $this->be($user);
 
         $this->get(route('register'))
             ->assertRedirect(route('home'));
@@ -44,7 +45,7 @@ class RegisterTest extends TestCase
             ->assertRedirect(route('home'));
 
         $this->assertTrue(User::whereEmail('tallstack@example.com')->exists());
-        $this->assertEquals('tallstack@example.com', auth()->user()->email);
+        $this->assertEquals('tallstack@example.com', Auth::user()->email);
     }
 
     /** @test */

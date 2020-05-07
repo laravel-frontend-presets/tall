@@ -3,11 +3,11 @@
 namespace Tests\Feature\Auth;
 
 use App\User;
-use Tests\TestCase;
-use Livewire\Livewire;
-use Illuminate\Support\Facades\Hash;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Livewire\Livewire;
+use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
@@ -26,7 +26,7 @@ class LoginTest extends TestCase
     {
         $user = factory(User::class)->create();
 
-        auth()->login($user);
+        $this->be($user);
 
         $this->get(route('login'))
             ->assertRedirect(route('home'));
@@ -42,9 +42,7 @@ class LoginTest extends TestCase
             ->set('password', 'password')
             ->call('authenticate');
 
-        $this->assertTrue(
-            auth()->user()->is(User::where('email', $user->email)->first())
-        );
+        $this->assertAuthenticatedAs($user);
     }
 
     /** @test */
@@ -104,6 +102,6 @@ class LoginTest extends TestCase
             ->call('authenticate')
             ->assertHasErrors('email');
 
-        $this->assertNull(auth()->user());
+        $this->assertFalse(Auth::check());
     }
 }
