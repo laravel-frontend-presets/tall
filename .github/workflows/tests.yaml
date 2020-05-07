@@ -20,15 +20,16 @@ jobs:
         php-version: ${{ matrix.php-versions }}
     - name: Create Laravel app
       run: |
-        composer create-project laravel/laravel=${{ matrix.laravel-versions }} app --prefer-dist
+        composer create-project laravel/laravel=${{ matrix.laravel-versions }} ../app --prefer-dist
     - name: Install Packages
       run: |
-        cd app
+        mkdir -p ../app
+        cd ../app
         composer require livewire/livewire
-        composer config repositories.local '{"type": "path", "url": "../"}' --file composer.json
+        composer config repositories.local '{"type": "path", "url": "../tall"}' --file composer.json
         composer require laravel-frontend-presets/tall dev-master
         php artisan ui tall --auth
     - name: Run PHPUnit
       run: |
-        cd app
+        cd ../app
         php vendor/bin/phpunit
