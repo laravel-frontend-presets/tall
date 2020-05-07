@@ -22,7 +22,7 @@ Some notable features of this package include:
 To install the preset in a fresh Laravel application, simply run the following commands:
 
 ```bash
-composer require laravel/ui livewire/livewire laravel-frontend-presets/tall
+composer require livewire/livewire laravel-frontend-presets/tall
 php artisan ui tall
 npm install
 npm run dev
@@ -33,7 +33,7 @@ npm run dev
 If you would like to install the preset and its auth scaffolding in a fresh Laravel application, make sure to use the `--auth` flag on the `ui` command:
 
 ```bash
-composer require laravel/ui livewire/livewire laravel-frontend-presets/tall
+composer require livewire/livewire laravel-frontend-presets/tall
 php artisan ui tall --auth
 npm install
 npm run dev
@@ -49,9 +49,12 @@ All routes, components, controllers and tests are published to your application.
 
 ## Removing the package
 
-If you don't want to keep this package installed once you've installed the preset, you can safely remove it with a couple of extra steps. Unlike the default Laravel presets, this one publishes all the auth logic to your project's `/app` directory, so it's fully redundant.
+If you don't want to keep this package installed once you've installed the preset, you can safely remove it. Unlike the default Laravel presets, this one publishes all the auth logic to your project's `/app` directory, so it's fully redundant.
 
-If you are using pagination, set the default pagination views to the ones provided in the `boot` method of a service provider:
+
+### A note on pagination
+
+If you are using pagination, you set the default pagination views to the ones provided in the `boot` method of a service provider:
 
 ```php
 use Illuminate\Pagination\Paginator;
@@ -66,12 +69,6 @@ class AppServiceProvider extends ServiceProvider
         Paginator::defaultSimpleView('pagination::simple-default');
     }
 }
-```
-
-That's it, you should now be able to remove the package:
-
-```bash
-composer remove laravel-frontend-presets/tall
 ```
 
 ## Credits
