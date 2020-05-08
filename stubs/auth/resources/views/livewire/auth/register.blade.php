@@ -4,14 +4,14 @@
             <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
         </a>
 
-        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
-            Create a new account
+        <h2 class="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-900">
+            {{ __('auth.register.heading') }}
         </h2>
 
-        <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
-            Or
-            <a href="{{ route('login') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-                sign in to your account
+        <p class="mt-2 text-sm leading-5 text-center text-gray-600 max-w">
+            {{ __('auth.register.subtitle.pre') }}
+            <a href="{{ route('login') }}" class="font-medium text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500 focus:outline-none focus:underline">
+                {{ __('auth.register.subtitle.link') }}
             </a>
         </p>
     </div>
@@ -20,8 +20,8 @@
         <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
             <form wire:submit.prevent="register">
                 <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 leading-5">
-                        Name
+                    <label for="name" class="block text-sm font-medium leading-5 text-gray-700">
+                        {{ __('auth.labels.username') }}
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
@@ -34,8 +34,8 @@
                 </div>
 
                 <div class="mt-6">
-                    <label for="email" class="block text-sm font-medium text-gray-700 leading-5">
-                        Email address
+                    <label for="email" class="block text-sm font-medium leading-5 text-gray-700">
+                        {{ __('auth.labels.email') }}
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
@@ -48,8 +48,8 @@
                 </div>
 
                 <div class="mt-6">
-                    <label for="password" class="block text-sm font-medium text-gray-700 leading-5">
-                        Password
+                    <label for="password" class="block text-sm font-medium leading-5 text-gray-700">
+                        {{ __('auth.labels.password') }}
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
@@ -62,19 +62,19 @@
                 </div>
 
                 <div class="mt-6">
-                    <label for="password_confirmation" class="block text-sm font-medium text-gray-700 leading-5">
-                        Confirm Password
+                    <label for="password_confirmation" class="block text-sm font-medium leading-5 text-gray-700">
+                        {{ __('auth.register.confirm_password_label') }}
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
-                        <input wire:model.lazy="passwordConfirmation" id="password_confirmation" type="password" required class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 appearance-none rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                        <input wire:model.lazy="passwordConfirmation" id="password_confirmation" type="password" required class="block w-full px-3 py-2 placeholder-gray-400 transition duration-150 ease-in-out border border-gray-300 rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5" />
                     </div>
                 </div>
 
                 <div class="mt-6">
                     <span class="block w-full rounded-md shadow-sm">
-                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                            Register
+                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
+                            {{ __('auth.register.register_action') }}
                         </button>
                     </span>
                 </div>
