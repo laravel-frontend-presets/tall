@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('title', 'Reset password')
+@section('title', __('Reset password'))
 
 @section('content')
     <div>

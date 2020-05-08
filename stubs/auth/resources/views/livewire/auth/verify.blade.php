@@ -5,13 +5,13 @@
         </a>
 
         <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
-            Verify your email address
+            {{ __('Verify your email address') }}
         </h2>
 
         <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
             Or
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-                sign out
+                {{ __('sign out') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -28,15 +28,15 @@
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                     </svg>
 
-                    <p>A fresh verification link has been sent to your email address.</p>
+                    <p>{{ __('A fresh verification link has been sent to your email address.') }}</p>
                 </div>
             @endif
 
             <div class="text-sm text-gray-700">
-                <p>Before proceeding, please check your email for a verification link.</p>
+                <p>{{ __('Before proceeding, please check your email for a verification link.') }}</p>
 
                 <p class="mt-3">
-                    If you did not receive the email, <a wire:click="resend" class="text-indigo-700 cursor-pointer hover:text-indigo-600 focus:outline-none focus:underline transition ease-in-out duration-150">click here to request another</a>.
+                    {{ __('If you did not receive the email,') }} <a wire:click="resend" class="text-indigo-700 cursor-pointer hover:text-indigo-600 focus:outline-none focus:underline transition ease-in-out duration-150">{{ __('click here to request another') }}</a>.
                 </p>
             </div>
         </div>
