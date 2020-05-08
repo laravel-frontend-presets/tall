@@ -19,8 +19,6 @@ class TallPreset extends Preset
     const NPM_PACKAGES_TO_REMOVE = [
         'lodash',
         'axios',
-        'sass',
-        'sass-loader',
     ];
 
     public static function install()
