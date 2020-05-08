@@ -1,6 +1,8 @@
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
+        <a href="{{ route('home') }}">
+            <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
+        </a>
 
         <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
             Confirm your password
