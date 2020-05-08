@@ -30,17 +30,16 @@ jobs:
         extensions: dom, curl, libxml, mbstring, zip
         coverage: none
     - name: Create Laravel app
-      run: |
-        composer create-project laravel/laravel=${{ matrix.laravel }} ../app --prefer-dist
+      run: composer create-project laravel/laravel=${{ matrix.laravel }} ../app --prefer-dist
     - name: Install dependencies
       run: |
-        mkdir -p ../app
         cd ../app
         composer require livewire/livewire
         composer config repositories.local '{"type": "path", "url": "../tall"}' --file composer.json
         composer require laravel-frontend-presets/tall dev-master
     - name: Install preset
       run: |
+        cd ../app
         php artisan ui tall --auth
     - name: Execute tests
       run: |
