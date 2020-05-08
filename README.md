@@ -75,15 +75,6 @@ class AppServiceProvider extends ServiceProvider
 
 By default, Tailwind will run PurgeCSS looking within your `resources/views` and `resources/css` directories for classes to keep. You can change (or entirely disable) this behavior by changing the `purge` section of your `tailwind.config.js` file. For more information about Tailwind's implementation of PurgeCSS, you can [read here](https://tailwindcss.com/docs/controlling-file-size/).
 
-For example, if your JavaScript files contain CSS classes, you will need to add the following to the `content` section so those classes don't get purged:
-
-```js
-content: [
-    ...
-    './resources/js/**/*.js',
-],
-```
-
 ## Credits
 
 - [Dan Harrin](https://github.com/DanHarrin)

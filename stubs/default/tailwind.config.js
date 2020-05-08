@@ -11,11 +11,19 @@ module.exports = {
     variants: {},
     purge: {
         content: [
-            './resources/views/**/*.blade.php',
-            './resources/css/**/*.css',
+            './app/**/*.php',
+            './resources/**/*.html',
+            './resources/**/*.js',
+            './resources/**/*.jsx',
+            './resources/**/*.ts',
+            './resources/**/*.tsx',
+            './resources/**/*.php',
+            './resources/**/*.vue',
+            './resources/**/*.twig',
         ],
         options: {
-            extractorPattern: /[\w-/.:]+(?<!:)/g,
+            defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
+            whitelistPatterns: [/-active$/, /-enter$/, /-leave-to$/, /show$/],
         },
     },
     plugins: [
