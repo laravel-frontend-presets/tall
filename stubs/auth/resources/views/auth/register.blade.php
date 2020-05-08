@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('title', 'Create a new account')
+@section('title', __('auth.register.title'))
 
 @section('content')
     <div>

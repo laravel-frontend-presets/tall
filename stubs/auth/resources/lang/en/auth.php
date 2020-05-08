@@ -15,23 +15,23 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'passwords' => [
         'confirm' => [
-            'heading' => 'Confirm your password',
+            'title' => 'Confirm your password',
             'subtitle' => 'Please continue your password before continuing',
             'forgot_password_link' => 'Forgot your password?',
             'confirm_password_action' => 'Confirm password'
         ],
         'email' => [
-            'heading' => 'Reset password',
+            'title' => 'Reset password',
             'send_password_reset_link_action' => 'Send password reset link'
         ],
         'reset' => [
-            'heading' => 'Reset password',
+            'title' => 'Reset password',
             'confirm_password_action' => 'Confirm Password',
             'reset_password_action' => 'Reset Password'
         ],
     ],
     'login' => [
-        'heading' => 'Sign in to your account',
+        'title' => 'Sign in to your account',
         'subtitle' => [
             'pre' => 'Or',
             'link' => 'create a new account',
@@ -41,7 +41,7 @@ return [
         'sign_in_action' => 'Sign in',
     ],
     'register' => [
-        'heading' => 'Create a new account',
+        'title' => 'Create a new account',
         'subtitle' => [
             'pre' => 'Or',
             'link' => 'sign in to your account',
@@ -50,7 +50,7 @@ return [
         'register_action' => 'Register'
     ],
     'verify' => [
-        'heading' => 'Verify your email address',
+        'title' => 'Verify your email address',
         'subtitle' => [
             'pre' => 'Or',
             'link' => 'sign out',

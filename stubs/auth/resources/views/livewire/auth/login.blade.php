@@ -5,7 +5,7 @@
         </a>
 
         <h2 class="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-900">
-            {{ __('auth.login.heading') }}
+            {{ __('auth.login.title') }}
         </h2>
         <p class="mt-2 text-sm leading-5 text-center text-gray-600 max-w">
             {{ __('auth.login.subtitle.pre') }}

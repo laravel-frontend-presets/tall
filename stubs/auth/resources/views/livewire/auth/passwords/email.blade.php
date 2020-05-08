@@ -5,7 +5,7 @@
         </a>
 
         <h2 class="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-900">
-            {{ __('auth.passwords.email.heading') }}
+            {{ __('auth.passwords.email.title') }}
         </h2>
     </div>
 
