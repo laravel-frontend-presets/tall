@@ -26,7 +26,7 @@ jobs:
     - name: Create Laravel app
       run: |
         composer create-project laravel/laravel=${{ matrix.laravel-versions }} ../app --prefer-dist
-    - name: Install Packages
+    - name: Set up preset
       run: |
         mkdir -p ../app
         cd ../app
