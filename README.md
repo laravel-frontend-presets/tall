@@ -6,7 +6,7 @@
 A front-end preset for Laravel to scaffold an application using the [TALL stack](https://tallstack.dev), jumpstarting your application's development.
 
 If you're not familiar with the name, it's an acronym that describes the main technologies involved in the stack:
-- [TailwindCSS](https://tailwindcss.com)
+- [Tailwind CSS](https://tailwindcss.com)
 - [Alpine.js](https://github.com/alpinejs/alpine)
 - [Laravel](https://laravel.com)
 - [Livewire](https://laravel-livewire.com)
@@ -15,7 +15,7 @@ If you're not familiar with the name, it's an acronym that describes the main te
 
 Some notable features of this package include:
 - Views extending a default layout
-- Front-end assets like TailwindCSS and AlpineJS compiled with Laravel Mix
+- Front-end assets like Tailwind CSS and Alpine.js compiled with Laravel Mix
 - Tailwind-powered pagination views
 - The [Tailwind UI](https://tailwindui.com) and Tailwind's [Custom Forms](https://github.com/tailwindcss/custom-forms) extensions available out-of-the-box
 
