@@ -62,11 +62,14 @@ return [
             'link' => 'click here to request another.',
         ]
     ],
-
+    'links' => [
+        'register' => 'Register',
+        'login' => 'Login',
+        'logout' => 'Log out'
+    ],
     'labels' => [
         'email' => 'Email address',
         'password' => 'Password',
         'username' => 'Name',
-        
     ],
 ];
