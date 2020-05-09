@@ -5,13 +5,11 @@ namespace Tests\Feature\Auth;
 use App\User;
 use Tests\TestCase;
 use Livewire\Livewire;
-use Illuminate\Support\Facades\Hash;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\URL;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class VerifyTest extends TestCase
 {
@@ -53,7 +51,7 @@ class VerifyTest extends TestCase
         Auth::login($user);
 
         $url = URL::temporarySignedRoute('verification.verify', Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)), [
-            'id' => $user->getKey(),
+            'id'   => $user->getKey(),
             'hash' => sha1($user->getEmailForVerification()),
         ]);
 

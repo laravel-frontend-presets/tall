@@ -3,14 +3,14 @@
 namespace Tests\Feature\Auth\Passwords;
 
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-use Livewire\Livewire;
 use Tests\TestCase;
+use Livewire\Livewire;
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ResetTest extends TestCase
 {
@@ -24,8 +24,8 @@ class ResetTest extends TestCase
         $token = Str::random(16);
 
         DB::table('password_resets')->insert([
-            'email' => $user->email,
-            'token' => Hash::make($token),
+            'email'      => $user->email,
+            'token'      => Hash::make($token),
             'created_at' => Carbon::now(),
         ]);
 
@@ -45,8 +45,8 @@ class ResetTest extends TestCase
         $token = Str::random(16);
 
         DB::table('password_resets')->insert([
-            'email' => $user->email,
-            'token' => Hash::make($token),
+            'email'      => $user->email,
+            'token'      => Hash::make($token),
             'created_at' => Carbon::now(),
         ]);
 
@@ -59,7 +59,7 @@ class ResetTest extends TestCase
             ->call('resetPassword');
 
         $this->assertTrue(Auth::attempt([
-            'email' => $user->email,
+            'email'    => $user->email,
             'password' => 'new-password',
         ]));
     }
@@ -97,7 +97,7 @@ class ResetTest extends TestCase
     }
 
     /** @test */
-    function password_is_required()
+    public function password_is_required()
     {
         Livewire::test('auth.passwords.reset', [
             'token' => Str::random(16),
@@ -108,7 +108,7 @@ class ResetTest extends TestCase
     }
 
     /** @test */
-    function password_is_minimum_of_eight_characters()
+    public function password_is_minimum_of_eight_characters()
     {
         Livewire::test('auth.passwords.reset', [
             'token' => Str::random(16),
@@ -119,7 +119,7 @@ class ResetTest extends TestCase
     }
 
     /** @test */
-    function password_matches_password_confirmation()
+    public function password_matches_password_confirmation()
     {
         Livewire::test('auth.passwords.reset', [
             'token' => Str::random(16),
