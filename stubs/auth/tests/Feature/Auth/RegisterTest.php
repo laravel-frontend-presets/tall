@@ -54,7 +54,7 @@ class RegisterTest extends TestCase
         Livewire::test('auth.register')
             ->set('name', '')
             ->call('register')
-            ->assertHasErrors(['email' => 'required']);
+            ->assertHasErrors(['name' => 'required']);
     }
 
     /** @test */
