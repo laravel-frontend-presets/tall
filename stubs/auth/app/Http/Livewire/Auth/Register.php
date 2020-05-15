@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Auth;
 
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
@@ -36,7 +37,9 @@ class Register extends Component
             'password' => Hash::make($this->password),
         ]);
 
-        $user->sendEmailVerificationNotification();
+        if ($user instanceof MustVerifyEmail) {
+            $user->sendEmailVerificationNotification();
+        }
 
         Auth::login($user, true);
 
