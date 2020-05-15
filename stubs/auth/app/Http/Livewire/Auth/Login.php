@@ -17,6 +17,13 @@ class Login extends Component
     /** @var bool */
     public $remember = false;
 
+    public function updatedEmail()
+    {
+        $this->validate([
+            'email' => ['email'],
+        ]);
+    }
+
     public function authenticate()
     {
         $credentials = $this->validate([
