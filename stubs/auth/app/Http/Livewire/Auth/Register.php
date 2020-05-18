@@ -6,6 +6,7 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 use Livewire\Component;
 
 class Register extends Component
@@ -36,7 +37,7 @@ class Register extends Component
             'password' => Hash::make($this->password),
         ]);
 
-        $user->sendEmailVerificationNotification();
+        event(new Registered($user));
 
         Auth::login($user, true);
 
