@@ -6,6 +6,7 @@
 A front-end preset for Laravel to scaffold an application using the [TALL stack](https://tallstack.dev), jumpstarting your application's development.
 
 If you're not familiar with the name, it's an acronym that describes the main technologies involved in the stack:
+
 - [Tailwind CSS](https://tailwindcss.com)
 - [Alpine.js](https://github.com/alpinejs/alpine)
 - [Laravel](https://laravel.com)
@@ -14,6 +15,7 @@ If you're not familiar with the name, it's an acronym that describes the main te
 ![Login View](./screenshot.png)
 
 Some notable features of this package include:
+
 - Views extending a default layout
 - Front-end assets like Tailwind CSS and Alpine.js compiled with Laravel Mix
 - Tailwind-powered pagination views
@@ -42,10 +44,31 @@ npm run dev
 ```
 
 Some notable features of the authentication scaffolding include:
+
 - Powered by Livewire components and single action controllers
 - Bundled with pre-written tests
 
 All routes, components, controllers and tests are published to your application. The idea behind this is that you have full control over every aspect of the scaffolding in your own app, removing the need to dig around in the vendor folder to figure out how things are working.
+
+## Installation (extra!)
+
+As this preset is designed to get you up-and-running quickly with a real application, it also comes with an `extra` option that will go even further. Running the `php artisan ui tall` command with this
+
+- A default application layout
+- An "account settings" page where authenticated users can change their email address and password
+
+![Dashboard View](./dashboard.png)
+
+To install these extra features, make sure to use the `--option=extra` flag when installing the preset:
+
+```bash
+composer require livewire/livewire laravel-frontend-presets/tall
+php artisan ui tall --auth --option=extra
+npm install
+npm run dev
+```
+
+**Note:** The extra options requires the `--auth` flag to be used too.
 
 ## CSS purging
 
@@ -54,7 +77,6 @@ Tailwind uses PurgeCSS to remove any unused classes from your production CSS bui
 ## Removing the package
 
 If you don't want to keep this package installed once you've installed the preset, you can safely remove it. Unlike the default Laravel presets, this one publishes all the auth logic to your project's `/app` directory, so it's fully redundant.
-
 
 ### A note on pagination
 

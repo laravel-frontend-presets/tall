@@ -2,9 +2,9 @@
 
 namespace LaravelFrontendPresets\Tall;
 
+use Laravel\Ui\UiCommand;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Ui\UiCommand;
 
 class TallServiceProvider extends ServiceProvider
 {
@@ -15,15 +15,28 @@ class TallServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        UiCommand::macro('tall', function ($command) {
+        UiCommand::macro('tall', function (UiCommand $command) {
+            $options = $command->option('option') ?? [];
+            $option = reset($options);
+
             TallPreset::install();
 
-            $command->info('TALL preset scaffolding installed successfully.');
+            $command->info('Basic TALL preset scaffolding installed successfully.');
 
             if ($command->option('auth')) {
                 TallPreset::installAuth();
 
                 $command->info('Auth scaffolding installed successfully.');
+            }
+
+            if ($option === 'extra') {
+                if (!$command->option('auth')) {
+                    return $command->error('The `extra` option requires the `--auth` flag to work.');
+                }
+
+                TallPreset::installExtra();
+
+                $command->info('Extra scaffolding installed successfully.');
             }
 
             $command->comment('Please run "npm install && npm run dev" to compile your new assets.');

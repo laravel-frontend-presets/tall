@@ -44,6 +44,23 @@ class TallPreset extends Preset
         $filesystem->copyDirectory(__DIR__ . '/../stubs/auth', base_path());
     }
 
+    public static function installExtra()
+    {
+        $filesystem = new Filesystem();
+
+        $filesystem->copyDirectory(__DIR__ . '/../stubs/extra', base_path());
+
+        file_put_contents(base_path('routes/web.php'), PHP_EOL . <<<STUB
+        Route::layout('layouts.app')->middleware('auth')->group(function () {
+            Route::livewire('dashboard', 'app.dashboard')
+                ->name('dashboard');
+
+            Route::livewire('settings', 'app.users.settings')
+                ->name('users.settings');
+        });
+        STUB . PHP_EOL, FILE_APPEND);
+    }
+
     protected static function updatePackageArray(array $packages)
     {
         return array_merge(
