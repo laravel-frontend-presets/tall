@@ -9,6 +9,9 @@
         @else
             <title>{{ config('app.name') }}</title>
         @endif
+		
+        <!-- Favicon -->
+		<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
