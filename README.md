@@ -21,8 +21,17 @@ Some notable features of this package include:
 
 ## Installation (without auth)
 
-To install the preset in a fresh Laravel application, simply run the following commands:
+To install the preset install a fresh Laravel application run with the following command in your project root:
+```bash
+composer create-project --prefer-dist laravel/laravel .
+```
 
+or with this command if you've installed the Laravel Installer:
+```bash
+laravel new .
+```
+
+Then simply run the following commands:
 ```bash
 composer require livewire/livewire laravel-frontend-presets/tall
 php artisan ui tall
