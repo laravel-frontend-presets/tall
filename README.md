@@ -19,7 +19,7 @@ Some notable features of this package include:
 - Tailwind-powered pagination views
 - The [Tailwind UI](https://tailwindui.com) and Tailwind's [Custom Forms](https://github.com/tailwindcss/custom-forms) extensions available out-of-the-box
 
-## Installation (without auth)
+## Prerequisite
 
 To install the preset install a fresh Laravel application run with the following command in your project root:
 ```bash
@@ -30,6 +30,8 @@ or with this command if you've installed the Laravel Installer:
 ```bash
 laravel new .
 ```
+
+## Installation (without auth)
 
 Then simply run the following commands:
 ```bash
