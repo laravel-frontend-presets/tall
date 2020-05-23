@@ -19,19 +19,11 @@ Some notable features of this package include:
 - Tailwind-powered pagination views
 - The [Tailwind UI](https://tailwindui.com) and Tailwind's [Custom Forms](https://github.com/tailwindcss/custom-forms) extensions available out-of-the-box
 
-## Prerequisite
+## Installation
 
-To install the preset install a fresh Laravel application run with the following command in your project root:
-```bash
-composer create-project --prefer-dist laravel/laravel .
-```
+This preset is intended to be installed into a fresh Laravel application. Follow [Laravel's installation instructions](https://laravel.com/docs/7.x/installation) to ensure you have a working environment before continuing.
 
-or with this command if you've installed the Laravel Installer:
-```bash
-laravel new .
-```
-
-## Installation (without auth)
+### Installation (without auth)
 
 Then simply run the following commands:
 ```bash
@@ -41,7 +33,7 @@ npm install
 npm run dev
 ```
 
-## Installation (with auth)
+### Installation (with auth)
 
 If you would like to install the preset and its auth scaffolding in a fresh Laravel application, make sure to use the `--auth` flag on the `ui` command:
 
