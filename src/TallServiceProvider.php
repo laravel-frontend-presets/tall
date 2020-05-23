@@ -19,12 +19,12 @@ class TallServiceProvider extends ServiceProvider
             $options = $command->option('option') ?? [];
             $option = reset($options);
 
-            TallPreset::install();
+            DefaultPreset::install();
 
             $command->info('Basic TALL preset scaffolding installed successfully.');
 
             if ($command->option('auth')) {
-                TallPreset::installAuth();
+                AuthPreset::install();
 
                 $command->info('Auth scaffolding installed successfully.');
             }
@@ -34,7 +34,7 @@ class TallServiceProvider extends ServiceProvider
                     return $command->error('The `extra` option requires the `--auth` flag to work.');
                 }
 
-                TallPreset::installExtra();
+                ExtraPreset::install();
 
                 $command->info('Extra scaffolding installed successfully.');
             }
