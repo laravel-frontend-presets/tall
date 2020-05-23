@@ -19,10 +19,13 @@ Some notable features of this package include:
 - Tailwind-powered pagination views
 - The [Tailwind UI](https://tailwindui.com) and Tailwind's [Custom Forms](https://github.com/tailwindcss/custom-forms) extensions available out-of-the-box
 
-## Installation (without auth)
+## Installation
 
-To install the preset in a fresh Laravel application, simply run the following commands:
+This preset is intended to be installed into a fresh Laravel application. Follow [Laravel's installation instructions](https://laravel.com/docs/7.x/installation) to ensure you have a working environment before continuing.
 
+### Installation (without auth)
+
+Then simply run the following commands:
 ```bash
 composer require livewire/livewire laravel-frontend-presets/tall
 php artisan ui tall
@@ -30,7 +33,7 @@ npm install
 npm run dev
 ```
 
-## Installation (with auth)
+### Installation (with auth)
 
 If you would like to install the preset and its auth scaffolding in a fresh Laravel application, make sure to use the `--auth` flag on the `ui` command:
 
