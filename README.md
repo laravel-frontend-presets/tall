@@ -29,8 +29,7 @@ Then simply run the following commands:
 ```bash
 composer require livewire/livewire laravel-frontend-presets/tall
 php artisan ui tall
-npm install
-npm run dev
+npm install && npm run dev
 ```
 
 ### Installation (with auth)
