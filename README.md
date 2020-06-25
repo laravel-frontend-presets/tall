@@ -40,8 +40,7 @@ If you would like to install the preset and its auth scaffolding in a fresh Lara
 ```bash
 composer require livewire/livewire laravel-frontend-presets/tall
 php artisan ui tall --auth
-npm install
-npm run dev
+npm install && npm run dev
 ```
 
 Some notable features of the authentication scaffolding include:
