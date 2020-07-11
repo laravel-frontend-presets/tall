@@ -11,14 +11,14 @@ class TallPreset extends Preset
     const NPM_PACKAGES_TO_ADD = [
         'scss' => [
             '@tailwindcss/ui' => '^0.1',
-            'alpinejs'        => '^2.0',
+            'alpinejs' => '^2.0',
             'laravel-mix-tailwind' => '^0.1.0',
-            'tailwindcss'     => '^1.4',
+            'tailwindcss' => '^1.4',
         ],
         'postcss' => [
             '@tailwindcss/ui' => '^0.1',
-            'alpinejs'        => '^2.0',
-            'tailwindcss'     => '^1.4',
+            'alpinejs' => '^2.0',
+            'tailwindcss' => '^1.4',
         ]
     ];
 
@@ -34,7 +34,8 @@ class TallPreset extends Preset
 
     protected static $preprocessor = 'scss';
 
-    public static function setPreprocessor(string $preprocessor) {
+    public static function setPreprocessor(string $preprocessor)
+    {
         if (! in_array($preprocessor, static::PREPROCESSORS)) {
             return;
         }
@@ -42,10 +43,11 @@ class TallPreset extends Preset
         static::$preprocessor = $preprocessor;
     }
 
-    public static function getStubsPath( string $append = '') {
-        $path = dirname( __FILE__, 2 ) . '/stubs';
+    public static function getStubsPath(string $append = '')
+    {
+        $path = dirname(__FILE__, 2).'/stubs';
 
-        return $path . '/' . ltrim( $append, '/' );
+        return $path.'/'.ltrim($append, '/');
     }
 
     public static function install(string $preprocessor = 'scss')
@@ -71,13 +73,13 @@ class TallPreset extends Preset
     {
         $filesystem = new Filesystem();
 
-        $filesystem->copyDirectory(static::getStubsPath( 'auth'), base_path());
+        $filesystem->copyDirectory(static::getStubsPath('auth'), base_path());
     }
 
     protected static function updatePackageArray(array $packages)
     {
         return array_merge(
-            static::NPM_PACKAGES_TO_ADD[ static::$preprocessor ],
+            static::NPM_PACKAGES_TO_ADD[static::$preprocessor],
             Arr::except($packages, static::NPM_PACKAGES_TO_REMOVE)
         );
     }
