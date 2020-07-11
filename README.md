@@ -48,6 +48,17 @@ Some notable features of the authentication scaffolding include:
 - Powered by Livewire components and single action controllers
 - Bundled with pre-written tests
 
+### Installation (with postcss)
+
+If you would like to install the preset to use PostCSS instead of SCSS don't forget to add `--option=postcss` flag on the `ui` command
+
+```bash
+composer require livewire/livewire laravel-frontend-presets/tall
+php artisan ui tall --option=postcss
+npm install
+npm run dev
+```
+
 All routes, components, controllers and tests are published to your application. The idea behind this is that you have full control over every aspect of the scaffolding in your own app, removing the need to dig around in the vendor folder to figure out how things are working.
 
 ## CSS purging
