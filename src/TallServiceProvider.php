@@ -16,7 +16,7 @@ class TallServiceProvider extends ServiceProvider
     public function boot()
     {
         UiCommand::macro('tall', function ($command) {
-            TallPreset::install();
+            TallPreset::install($command->option('postcss') ? 'postcss' : 'scss');
 
             $command->info('TALL preset scaffolding installed successfully.');
 

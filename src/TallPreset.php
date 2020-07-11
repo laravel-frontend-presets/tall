@@ -9,10 +9,17 @@ use Laravel\Ui\Presets\Preset;
 class TallPreset extends Preset
 {
     const NPM_PACKAGES_TO_ADD = [
-        '@tailwindcss/ui' => '^0.1',
-        'alpinejs' => '^2.0',
-        'laravel-mix-tailwind' => '^0.1.0',
-        'tailwindcss' => '^1.4',
+        'scss' => [
+            '@tailwindcss/ui' => '^0.1',
+            'alpinejs'        => '^2.0',
+            'laravel-mix-tailwind' => '^0.1.0',
+            'tailwindcss'     => '^1.4',
+        ],
+        'postcss' => [
+            '@tailwindcss/ui' => '^0.1',
+            'alpinejs'        => '^2.0',
+            'tailwindcss'     => '^1.4',
+        ]
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [
@@ -20,13 +27,36 @@ class TallPreset extends Preset
         'axios',
     ];
 
-    public static function install()
+    const PREPROCESSORS = [
+        'scss',
+        'postcss'
+    ];
+
+    protected static $preprocessor = 'scss';
+
+    public static function setPreprocessor(string $preprocessor) {
+        if (! in_array($preprocessor, static::PREPROCESSORS)) {
+            return;
+        }
+
+        static::$preprocessor = $preprocessor;
+    }
+
+    public static function getStubsPath( string $append = '') {
+        $path = dirname( __FILE__, 2 ) . '/stubs';
+
+        return $path . '/' . ltrim( $append, '/' );
+    }
+
+    public static function install(string $preprocessor = 'scss')
     {
+        static::setPreprocessor($preprocessor);
         static::updatePackages();
 
         $filesystem = new Filesystem();
         $filesystem->deleteDirectory(resource_path('sass'));
-        $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
+        $filesystem->copyDirectory(static::getStubsPath('default'), base_path());
+        $filesystem->copyDirectory(static::getStubsPath(static::$preprocessor), base_path());
 
         static::updateFile(base_path('app/Providers/RouteServiceProvider.php'), function ($file) {
             return str_replace("public const HOME = '/home';", "public const HOME = '/';", $file);
@@ -41,13 +71,13 @@ class TallPreset extends Preset
     {
         $filesystem = new Filesystem();
 
-        $filesystem->copyDirectory(__DIR__ . '/../stubs/auth', base_path());
+        $filesystem->copyDirectory(static::getStubsPath( 'auth'), base_path());
     }
 
     protected static function updatePackageArray(array $packages)
     {
         return array_merge(
-            static::NPM_PACKAGES_TO_ADD,
+            static::NPM_PACKAGES_TO_ADD[ static::$preprocessor ],
             Arr::except($packages, static::NPM_PACKAGES_TO_REMOVE)
         );
     }
