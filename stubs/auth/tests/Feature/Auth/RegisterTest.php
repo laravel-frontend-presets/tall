@@ -7,8 +7,10 @@ use Tests\TestCase;
 use Livewire\Livewire;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Event;
 
 class RegisterTest extends TestCase
 {
@@ -36,6 +38,8 @@ class RegisterTest extends TestCase
     /** @test */
     function a_user_can_register()
     {
+        Event::fake();
+
         Livewire::test('auth.register')
             ->set('name', 'Tall Stack')
             ->set('email', 'tallstack@example.com')
@@ -46,6 +50,8 @@ class RegisterTest extends TestCase
 
         $this->assertTrue(User::whereEmail('tallstack@example.com')->exists());
         $this->assertEquals('tallstack@example.com', Auth::user()->email);
+
+        Event::assertDispatched(Registered::class);
     }
 
     /** @test */
