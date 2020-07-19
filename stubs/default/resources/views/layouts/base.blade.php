@@ -3,21 +3,21 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         @hasSection('title')
+
             <title>@yield('title') - {{ config('app.name') }}</title>
         @else
             <title>{{ config('app.name') }}</title>
         @endif
 		
         <!-- Favicon -->
-		<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+		<link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
         @livewireStyles
 
         <!-- CSRF Token -->
@@ -27,7 +27,7 @@
     <body>
         @yield('body')
 
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ url(mix('js/app.js')) }}"></script>
         @livewireScripts
     </body>
 </html>
