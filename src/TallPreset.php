@@ -10,6 +10,7 @@ class TallPreset extends Preset
 {
     const NPM_PACKAGES_TO_ADD = [
         '@tailwindcss/ui' => '^0.3',
+        '@tailwindcss/typography' => '^1.4',
         'alpinejs' => '^2.0',
         'laravel-mix-tailwind' => '^0.1.0',
         'tailwindcss' => '^1.4',
