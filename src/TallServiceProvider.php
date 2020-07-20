@@ -18,7 +18,7 @@ class TallServiceProvider extends ServiceProvider
         UiCommand::macro('tall', function ($command) {
             $preprocessor = in_array('postcss', $command->option('option'))
                 ? 'postcss'
-                : 'css';
+                : 'scss';
 
             TallPreset::install($preprocessor);
 
