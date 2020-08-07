@@ -17,7 +17,7 @@ class Confirm extends Component
 
         session()->put('auth.password_confirmed_at', time());
 
-        redirect()->intended(route('home'));
+        return redirect()->intended(route('home'));
     }
 
     public function render()
