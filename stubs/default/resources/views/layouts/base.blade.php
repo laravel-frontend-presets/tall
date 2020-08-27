@@ -27,7 +27,7 @@
     <body>
         @yield('body')
 
-        <script src="{{ url(mix('js/app.js')) }}"></script>
         @livewireScripts
+        <script src="{{ url(mix('js/app.js')) }}"></script>
     </body>
 </html>
