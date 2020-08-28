@@ -2,4 +2,5 @@
 
 @section('body')
     @yield('content')
+    {{ $slot ?? null }}
 @endsection
