@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Auth\Passwords;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +19,7 @@ class ResetTest extends TestCase
     /** @test */
     public function can_view_password_reset_page()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $token = Str::random(16);
 
@@ -40,7 +40,7 @@ class ResetTest extends TestCase
     /** @test */
     public function can_reset_password()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $token = Str::random(16);
 
