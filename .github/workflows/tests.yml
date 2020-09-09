@@ -36,7 +36,7 @@ jobs:
         cd ../app
         composer require livewire/livewire:^2.0
         composer config repositories.local '{"type": "path", "url": "../tall"}' --file composer.json
-        composer require laravel-frontend-presets/tall dev-master
+        composer require laravel-frontend-presets/tall
     - name: Install preset
       run: |
         cd ../app
