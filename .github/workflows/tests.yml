@@ -27,7 +27,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-        extensions: dom, curl, libxml, mbstring, zip
+        extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite
         coverage: none
     - name: Create Laravel app
       run: composer create-project laravel/laravel=${{ matrix.laravel }} ../app --prefer-dist
@@ -41,6 +41,12 @@ jobs:
       run: |
         cd ../app
         php artisan ui tall --auth
+    - name: Overwrite configuration
+      run: |
+        cd ../app
+        rm phpunit.xml
+        cp ../tall/.github/workflows/phpunit.xml.stub ./phpunit.xml
+
     - name: Execute tests
       run: |
         cd ../app
