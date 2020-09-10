@@ -30,11 +30,11 @@ class Login extends Component
             return;
         }
 
-        redirect()->intended(route('home'));
+        return redirect()->intended(route('home'));
     }
 
     public function render()
     {
-        return view('livewire.auth.login');
+        return view('livewire.auth.login')->extends('layouts.auth');
     }
 }

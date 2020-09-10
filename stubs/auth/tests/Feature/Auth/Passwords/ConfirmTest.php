@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Auth\Passwords;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +25,7 @@ class ConfirmTest extends TestCase
     /** @test */
     public function a_user_must_confirm_their_password_before_visiting_a_protected_page()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
         $this->be($user);
 
         $this->get('/must-be-confirmed')
@@ -47,7 +47,7 @@ class ConfirmTest extends TestCase
     /** @test */
     public function a_user_must_enter_their_own_password_to_confirm_it()
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'password' => Hash::make('password'),
         ]);
 
@@ -60,7 +60,7 @@ class ConfirmTest extends TestCase
     /** @test */
     public function a_user_who_confirms_their_password_will_get_redirected()
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'password' => Hash::make('password'),
         ]);
 

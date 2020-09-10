@@ -17,11 +17,11 @@ class Confirm extends Component
 
         session()->put('auth.password_confirmed_at', time());
 
-        redirect()->intended(route('home'));
+        return redirect()->intended(route('home'));
     }
 
     public function render()
     {
-        return view('livewire.auth.passwords.confirm');
+        return view('livewire.auth.passwords.confirm')->extends('layouts.auth');
     }
 }

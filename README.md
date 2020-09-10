@@ -19,9 +19,11 @@ Some notable features of this package include:
 - Tailwind-powered pagination views
 - The [Tailwind UI](https://tailwindui.com) and Tailwind's [Custom Forms](https://github.com/tailwindcss/custom-forms) extensions available out-of-the-box
 
+> **Note**: If you're looking for an application boilerplate that supports the TALL stack, you should check out [Laravel Jetstream](https://github.com/laravel/jetstream). It comes with authentication scaffolding, account management, teams support.
+
 ## Installation
 
-This preset is intended to be installed into a fresh Laravel application. Follow [Laravel's installation instructions](https://laravel.com/docs/7.x/installation) to ensure you have a working environment before continuing.
+This preset is intended to be installed into a fresh Laravel application. Follow [Laravel's installation instructions](https://laravel.com/docs/8.x/installation) to ensure you have a working environment before continuing.
 
 ### Installation (without auth)
 

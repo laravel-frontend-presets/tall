@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Auth;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
@@ -14,7 +14,7 @@ class LogoutTest extends TestCase
     /** @test */
     public function an_authenticated_user_can_log_out()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
         $this->be($user);
 
         $this->post(route('logout'))
