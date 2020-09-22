@@ -17,12 +17,14 @@ class Login extends Component
     /** @var bool */
     public $remember = false;
 
+    protected $rules = [
+        'email' => ['required', 'email'],
+        'password' => ['required'],
+    ];
+
     public function authenticate()
     {
-        $credentials = $this->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+        $credentials = $this->validate();
 
         if (!Auth::attempt($credentials, $this->remember)) {
             $this->addError('email', trans('auth.failed'));
