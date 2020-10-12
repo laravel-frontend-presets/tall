@@ -34,6 +34,7 @@ class ResetTest extends TestCase
             'token' => $token,
         ]))
             ->assertSuccessful()
+            ->assertSee($user->email)
             ->assertSeeLivewire('auth.passwords.reset');
     }
 

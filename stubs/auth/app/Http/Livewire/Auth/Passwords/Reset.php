@@ -26,6 +26,7 @@ class Reset extends Component
 
     public function mount($token)
     {
+        $this->email = request()->query('email', '');
         $this->token = $token;
     }
 
