@@ -27,7 +27,7 @@
                     </div>
 
                     @error('password')
-                    <p class="mt-2 text-sm text-red-600" id="password-error">{{ $message }}</p>
+                        <p class="mt-2 text-sm text-red-600" id="password-error">{{ $message }}</p>
                     @enderror
                 </div>
 
