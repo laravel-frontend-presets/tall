@@ -32,7 +32,7 @@
         }
     ],
     "require": {
-        "php": "^7.2.5",
+        "php": ">=7.2.5",
         "laravel/ui": "^3.0",
         "illuminate/support": "^8.0"
     },
