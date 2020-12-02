@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: [7.3, 7.4]
+        php: [7.3, 7.4, 8.0]
         laravel: [^8.0]
     name: P${{ matrix.php }} - L${{ matrix.laravel }}
     steps:
