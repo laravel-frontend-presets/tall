@@ -8,7 +8,11 @@ module.exports = {
             },
         },
     },
-    variants: {},
+    variants: {
+        extend: {
+            backgroundColor: ['active'],
+        }
+    },
     purge: {
         content: [
             './app/**/*.php',
@@ -27,7 +31,7 @@ module.exports = {
         },
     },
     plugins: [
-        require('@tailwindcss/ui'),
+        require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
     ],
 };
