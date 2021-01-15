@@ -10,10 +10,13 @@ class TallPreset extends Preset
 {
     const NPM_PACKAGES_TO_ADD = [
         '@tailwindcss/forms' => '^0.2',
-        '@tailwindcss/typography' => '^0.2',
-        'alpinejs' => '^2.6',
-        'laravel-mix-tailwind' => '^0.1.0',
-        'tailwindcss' => 'npm:@tailwindcss/postcss7-compat@^2.0',
+        '@tailwindcss/typography' => '^0.3',
+        'alpinejs' => '^2.8',
+        'laravel-mix-tailwind' => '^0.1',
+        'resolve-url-loader' => '^3.1',
+        'sass' => '^1.32',
+        'sass-loader' => '^8.0',
+        'tailwindcss' => '^2.0',
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [
