@@ -26,7 +26,7 @@ class TallServiceProvider extends ServiceProvider
                 $command->info('Auth scaffolding installed successfully.');
             }
 
-            $command->comment('Please run "npm install && npm run dev" to compile your new assets.');
+            $command->comment('Please run "yarn install && yarn run dev" to compile your new assets.');
         });
 
         Paginator::defaultView('pagination::default');
