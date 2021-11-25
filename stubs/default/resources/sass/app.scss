@@ -14,7 +14,9 @@
  *
  * See: https://github.com/laravel-frontend-presets/tall/issues/7
  */
- input:invalid, textarea:invalid, select:invalid {
+input:invalid,
+textarea:invalid,
+select:invalid {
     box-shadow: none;
 }
 
@@ -52,4 +54,15 @@
 
 [x-cloak] {
     display: none;
+}
+@layer base {
+    body {
+        @apply text-sm text-gray-600;
+    }
+    a {
+        @apply font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150;
+    }
+    h2 {
+        @apply mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9;
+    }
 }
