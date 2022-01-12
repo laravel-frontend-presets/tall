@@ -7,7 +7,7 @@ A front-end preset for Laravel to scaffold an application using the [TALL stack]
 
 If you're not familiar with the name, it's an acronym that describes the main technologies involved in the stack:
 - [Tailwind CSS](https://tailwindcss.com)
-- [Alpine.js](https://github.com/alpinejs/alpine)
+- [Alpine.js](https://alpinejs.dev/)
 - [Laravel](https://laravel.com)
 - [Livewire](https://laravel-livewire.com)
 
