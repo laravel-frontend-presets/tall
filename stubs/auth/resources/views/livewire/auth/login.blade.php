@@ -41,8 +41,9 @@
                         Password
                     </label>
 
-                    <div class="mt-1 rounded-md shadow-sm">
-                        <input wire:model.lazy="password" id="password" type="password" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('password') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
+                    <div x-data="{ viewable: false }" class="mt-1 rounded-md shadow-sm">
+                        <input wire:model.lazy="password" id="password" :type="viewable ? 'text' : 'password'" type="password" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('password') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
+                        <a class="text-xs text-gray-400 cursor-pointer" id="view-password" @click="viewable = ! viewable" x-text="viewable ? 'Hide Password' : 'View Password'">View Password</a>
                     </div>
 
                     @error('password')
