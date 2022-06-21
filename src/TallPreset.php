@@ -9,14 +9,14 @@ use Laravel\Ui\Presets\Preset;
 class TallPreset extends Preset
 {
     const NPM_PACKAGES_TO_ADD = [
-        '@tailwindcss/forms' => '^0.3',
-        '@tailwindcss/typography' => '^0.4',
-        'alpinejs' => '^3.2',
+        '@tailwindcss/forms' => '^0.4',
+        '@tailwindcss/typography' => '^0.5',
+        'alpinejs' => '^3.8',
         'laravel-mix-tailwind' => '^0.1',
         'resolve-url-loader' => '^3.1',
-        'sass' => '^1.32',
+        'sass' => '^1.3',
         'sass-loader' => '^8.0',
-        'tailwindcss' => '^2.2',
+        'tailwindcss' => '^3.0',
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [

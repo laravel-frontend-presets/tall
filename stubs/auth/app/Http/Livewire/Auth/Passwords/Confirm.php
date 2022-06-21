@@ -12,7 +12,7 @@ class Confirm extends Component
     public function confirm()
     {
         $this->validate([
-            'password' => 'required|password',
+            'password' => 'required|current_password',
         ]);
 
         session()->put('auth.password_confirmed_at', time());
