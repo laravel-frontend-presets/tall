@@ -41,6 +41,10 @@ jobs:
       run: |
         cd ../app
         php artisan ui tall --auth
+    - name: Compile assets
+      run: |
+        cd ../app
+        npm run dev
     - name: Overwrite configuration
       run: |
         cd ../app
