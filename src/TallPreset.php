@@ -12,7 +12,7 @@ class TallPreset extends Preset
         '@tailwindcss/forms' => '^0.4',
         '@tailwindcss/typography' => '^0.5',
         'alpinejs' => '^3.8',
-        'laravel-mix-tailwind' => '^0.1',
+        'autoprefixer' => '^10.4',
         'resolve-url-loader' => '^3.1',
         'sass' => '^1.3',
         'sass-loader' => '^8.0',

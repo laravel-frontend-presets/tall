@@ -15,7 +15,7 @@ If you're not familiar with the name, it's an acronym that describes the main te
 
 Some notable features of this package include:
 - Views extending a default layout
-- Front-end assets like Tailwind CSS and Alpine.js compiled with Laravel Mix
+- Front-end assets like Tailwind CSS and Alpine.js compiled with Vite 3
 - Tailwind-powered pagination views
 - The [Tailwind UI](https://tailwindui.com) and Tailwind's [Custom Forms](https://github.com/tailwindcss/custom-forms) extensions available out-of-the-box
 
