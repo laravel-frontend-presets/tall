@@ -12,11 +12,11 @@ class TallPreset extends Preset
         '@tailwindcss/forms' => '^0.4',
         '@tailwindcss/typography' => '^0.5',
         'alpinejs' => '^3.8',
-        'laravel-mix-tailwind' => '^0.1',
         'resolve-url-loader' => '^3.1',
         'sass' => '^1.3',
         'sass-loader' => '^8.0',
         'tailwindcss' => '^3.0',
+        'autoprefixer' => '^10.4.7'
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [
@@ -31,6 +31,8 @@ class TallPreset extends Preset
         $filesystem = new Filesystem();
         $filesystem->deleteDirectory(resource_path('sass'));
         $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
+
+        print(base_path());
 
         static::updateFile(base_path('app/Providers/RouteServiceProvider.php'), function ($file) {
             return str_replace("public const HOME = '/home';", "public const HOME = '/';", $file);
