@@ -32,8 +32,6 @@ class TallPreset extends Preset
         $filesystem->deleteDirectory(resource_path('sass'));
         $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
 
-        print(base_path());
-
         static::updateFile(base_path('app/Providers/RouteServiceProvider.php'), function ($file) {
             return str_replace("public const HOME = '/home';", "public const HOME = '/';", $file);
         });
