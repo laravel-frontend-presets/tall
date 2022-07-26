@@ -44,7 +44,7 @@ jobs:
     - name: Compile assets
       run: |
         cd ../app
-        npm run dev
+        npm install && npm run dev
     - name: Overwrite configuration
       run: |
         cd ../app
