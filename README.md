@@ -23,7 +23,7 @@ Some notable features of this package include:
 
 ## Installation
 
-This preset is intended to be installed into a fresh Laravel application. Follow [Laravel's installation instructions](https://laravel.com/docs/9.x/installation) to ensure you have a working environment before continuing.
+This preset is intended to be installed into a fresh Laravel application. Follow [Laravel's installation instructions](https://laravel.com/docs/installation) to ensure you have a working environment before continuing.
 
 ### Installation (without auth)
 
