@@ -9,7 +9,7 @@ use Laravel\Ui\Presets\Preset;
 class TallPreset extends Preset
 {
     const NPM_PACKAGES_TO_ADD = [
-        '@tailwindcss/forms' => '^0.4',
+        '@tailwindcss/forms' => '^0.5',
         '@tailwindcss/typography' => '^0.5',
         'alpinejs' => '^3.8',
         'autoprefixer' => '^10.4',
