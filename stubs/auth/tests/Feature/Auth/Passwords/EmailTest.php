@@ -46,7 +46,7 @@ class EmailTest extends TestCase
             ->call('sendResetPasswordLink')
             ->assertNotSet('emailSentMessage', false);
 
-        $this->assertDatabaseHas('password_resets', [
+        $this->assertDatabaseHas('password_reset_tokens', [
             'email' => $user->email,
         ]);
     }
