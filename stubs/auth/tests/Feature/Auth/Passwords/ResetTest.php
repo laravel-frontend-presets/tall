@@ -23,7 +23,7 @@ class ResetTest extends TestCase
 
         $token = Str::random(16);
 
-        DB::table('password_resets')->insert([
+        DB::table('password_reset_tokens')->insert([
             'email' => $user->email,
             'token' => Hash::make($token),
             'created_at' => Carbon::now(),
@@ -45,7 +45,7 @@ class ResetTest extends TestCase
 
         $token = Str::random(16);
 
-        DB::table('password_resets')->insert([
+        DB::table('password_reset_tokens')->insert([
             'email' => $user->email,
             'token' => Hash::make($token),
             'created_at' => Carbon::now(),
