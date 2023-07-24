@@ -9,7 +9,7 @@ If you're not familiar with the name, it's an acronym that describes the main te
 - [Tailwind CSS](https://tailwindcss.com)
 - [Alpine.js](https://alpinejs.dev/)
 - [Laravel](https://laravel.com)
-- [Livewire](https://laravel-livewire.com)
+- [Livewire](https://livewire.laravel.com)
 
 ![Login View](./screenshot.png)
 
