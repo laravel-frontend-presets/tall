@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Livewire\Auth\Login;
-use App\Http\Livewire\Auth\Passwords\Confirm;
-use App\Http\Livewire\Auth\Passwords\Email;
-use App\Http\Livewire\Auth\Passwords\Reset;
-use App\Http\Livewire\Auth\Register;
-use App\Http\Livewire\Auth\Verify;
+use App\Livewire\Auth\Login;
+use App\Livewire\Auth\Passwords\Confirm;
+use App\Livewire\Auth\Passwords\Email;
+use App\Livewire\Auth\Passwords\Reset;
+use App\Livewire\Auth\Register;
+use App\Livewire\Auth\Verify;
 use Illuminate\Support\Facades\Route;
 
 /*
