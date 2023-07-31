@@ -16,7 +16,7 @@ class Verify extends Component
 
         Auth::user()->sendEmailVerificationNotification();
 
-        $this->emit('resent');
+        $this->dispatch('resent');
 
         session()->flash('resent');
     }
