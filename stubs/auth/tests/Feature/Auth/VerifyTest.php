@@ -40,7 +40,7 @@ class VerifyTest extends TestCase
 
         Livewire::test('auth.verify')
             ->call('resend')
-            ->assertEmitted('resent');
+            ->assertDispatched('resent');
     }
 
     /** @test */
