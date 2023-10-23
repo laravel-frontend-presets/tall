@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Auth\Passwords;
+namespace App\Livewire\Auth\Passwords;
 
 use App\Providers\RouteServiceProvider;
 use Livewire\Component;

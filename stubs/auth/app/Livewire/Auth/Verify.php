@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Auth;
+namespace App\Livewire\Auth;
 
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +16,7 @@ class Verify extends Component
 
         Auth::user()->sendEmailVerificationNotification();
 
-        $this->emit('resent');
+        $this->dispatch('resent');
 
         session()->flash('resent');
     }

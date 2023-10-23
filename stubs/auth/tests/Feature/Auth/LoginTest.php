@@ -3,6 +3,7 @@
 namespace Tests\Feature\Auth;
 
 use App\Models\User;
+use App\Livewire\Auth\Login;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +19,7 @@ class LoginTest extends TestCase
     {
         $this->get(route('login'))
             ->assertSuccessful()
-            ->assertSeeLivewire('auth.login');
+            ->assertSeeLivewire(Login::class);
     }
 
     /** @test */
@@ -37,7 +38,7 @@ class LoginTest extends TestCase
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
-        Livewire::test('auth.login')
+        Livewire::test(Login::class)
             ->set('email', $user->email)
             ->set('password', 'password')
             ->call('authenticate');
@@ -50,7 +51,7 @@ class LoginTest extends TestCase
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
-        Livewire::test('auth.login')
+        Livewire::test(Login::class)
             ->set('email', $user->email)
             ->set('password', 'password')
             ->call('authenticate')
@@ -62,7 +63,7 @@ class LoginTest extends TestCase
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
-        Livewire::test('auth.login')
+        Livewire::test(Login::class)
             ->set('password', 'password')
             ->call('authenticate')
             ->assertHasErrors(['email' => 'required']);
@@ -73,7 +74,7 @@ class LoginTest extends TestCase
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
-        Livewire::test('auth.login')
+        Livewire::test(Login::class)
             ->set('email', 'invalid-email')
             ->set('password', 'password')
             ->call('authenticate')
@@ -85,7 +86,7 @@ class LoginTest extends TestCase
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
-        Livewire::test('auth.login')
+        Livewire::test(Login::class)
             ->set('email', $user->email)
             ->call('authenticate')
             ->assertHasErrors(['password' => 'required']);
@@ -96,7 +97,7 @@ class LoginTest extends TestCase
     {
         $user = User::factory()->create();
 
-        Livewire::test('auth.login')
+        Livewire::test(Login::class)
             ->set('email', $user->email)
             ->set('password', 'bad-password')
             ->call('authenticate')
