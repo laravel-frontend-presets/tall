@@ -109,9 +109,8 @@
                     </div>
                 </div>
                 <div class="ml-4 text-sm text-center text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) & TALL
-                    {{ \Composer\InstalledVersions::getPrettyVersion('laravel-frontend-presets/tall') }} (Livewire
-                    {{ \Composer\InstalledVersions::getPrettyVersion('livewire/livewire') }})
+                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) & Livewire
+                    {{ \Composer\InstalledVersions::getPrettyVersion('livewire/livewire') }}
                 </div>
             </div>
         </div>
