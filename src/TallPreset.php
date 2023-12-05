@@ -11,7 +11,6 @@ class TallPreset extends Preset
     const NPM_PACKAGES_TO_ADD = [
         '@tailwindcss/forms' => '^0.5',
         '@tailwindcss/typography' => '^0.5',
-        'alpinejs' => '^3.8',
         'autoprefixer' => '^10.4',
         'resolve-url-loader' => '^3.1',
         'sass' => '^1.3',
