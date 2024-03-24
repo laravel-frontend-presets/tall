@@ -40,16 +40,6 @@ class TallPreset extends Preset
                 );
             });
         }
-
-        if (file_exists(base_path('app/Http/Middleware/RedirectIfAuthenticated.php'))) {
-            static::updateFile(base_path('app/Http/Middleware/RedirectIfAuthenticated.php'), static function ($file) {
-                return str_replace(
-                    "RouteServiceProvider::HOME",
-                    "route('home')",
-                    $file
-                );
-            });
-        }
     }
 
     public static function installAuth()
