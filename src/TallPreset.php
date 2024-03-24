@@ -30,16 +30,6 @@ class TallPreset extends Preset
         $filesystem = new Filesystem;
         $filesystem->deleteDirectory(resource_path('sass'));
         $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
-
-        if (file_exists(base_path('app/Providers/RouteServiceProvider.php'))) {
-            static::updateFile(base_path('app/Providers/RouteServiceProvider.php'), static function ($file) {
-                return str_replace(
-                    "public const HOME = '/home';",
-                    "public const HOME = '/';",
-                    $file
-                );
-            });
-        }
     }
 
     public static function installAuth()
