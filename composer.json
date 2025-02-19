@@ -34,7 +34,7 @@
     "require": {
         "php": "^8.2",
         "laravel/ui": "^4.5",
-        "illuminate/support": "^11.0"
+        "illuminate/support": "^11.0|^12.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.5"
