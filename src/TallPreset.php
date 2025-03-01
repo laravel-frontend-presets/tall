@@ -9,13 +9,11 @@ use Illuminate\Filesystem\Filesystem;
 class TallPreset extends Preset
 {
     const NPM_PACKAGES_TO_ADD = [
+        'tailwindcss' => '^4.0',
         '@tailwindcss/forms' => '^0.5',
         '@tailwindcss/typography' => '^0.5',
-        'autoprefixer' => '^10.4',
-        'resolve-url-loader' => '^3.1',
-        'sass' => '^1.3',
-        'sass-loader' => '^8.0',
-        'tailwindcss' => '^3.4',
+        '@tailwindcss/postcss' => '^4.0',
+        '@tailwindcss/nesting' => 'latest',
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [
