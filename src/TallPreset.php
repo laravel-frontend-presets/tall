@@ -12,8 +12,7 @@ class TallPreset extends Preset
         'tailwindcss' => '^4.0',
         '@tailwindcss/forms' => '^0.5',
         '@tailwindcss/typography' => '^0.5',
-        '@tailwindcss/postcss' => '^4.0',
-        '@tailwindcss/nesting' => 'latest',
+        '@tailwindcss/vite' => '^4.0',
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [
