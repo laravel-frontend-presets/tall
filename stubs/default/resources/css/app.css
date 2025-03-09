@@ -1,0 +1,22 @@
+/* Import Tailwind CSS framework */
+@import 'tailwindcss';
+
+/* Custom theme configuration with system font stack */
+@theme {
+    --font-sans: 'Inter var', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Include Tailwind CSS plugins for enhanced form styling and typography */
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* Remove default red box-shadow on invalid form elements */
+input:invalid, textarea:invalid, select:invalid {
+    box-shadow: none;
+}
+
+/* Hide elements with x-cloak attribute (used with Alpine.js) until JavaScript loads */
+[x-cloak] {
+    display: none;
+}
