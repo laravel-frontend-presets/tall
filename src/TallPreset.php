@@ -9,14 +9,11 @@ use Illuminate\Filesystem\Filesystem;
 class TallPreset extends Preset
 {
     const NPM_PACKAGES_TO_ADD = [
-        'tailwindcss' => '^4.0',
         '@tailwindcss/forms' => '^0.5',
         '@tailwindcss/typography' => '^0.5',
-        '@tailwindcss/vite' => '^4.0',
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [
-        'lodash',
         'axios',
     ];
 
